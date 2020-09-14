@@ -81,6 +81,9 @@ sampleMatrix
 colnames(sampleMatrix) = c("Col1","Col2","Col3")
 rownames(sampleMatrix) = c("Row1","Row2","Row3")
 
+#head/tail
+head(sampleMatrix)
+tail(sampleMatrix)
 
 #### Data Frames
 name <- c('Jarrod','Jillian','Patrick','Grant')
@@ -102,4 +105,33 @@ eboard.df$iq
 #An example of functions 
 mean(eboard.df$age)
 mean(eboard.df$iq)
+
+
+####Logical operators
+#Equals
+2==2
+
+5==6
+
+"Jarrod"=="Cool"
+
+"Test"=="Test"
+
+#Not equal to
+5 != 9
+
+"Grant" != "Grant"
+
+#less than
+512 < 1024
+
+#greater than
+512 > 1024
+
+
+#AND/OR/NOT
+TRUE & TRUE
+TRUE & FALSE
+
+
 
