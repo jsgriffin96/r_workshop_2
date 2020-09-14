@@ -78,6 +78,8 @@ sampleMatrix
 sampleMatrix <- cbind(sampleMatrix,c(7,8,9))
 sampleMatrix
 
+colnames(sampleMatrix) = c("Col1","Col2","Col3")
+rownames(sampleMatrix) = c("Row1","Row2","Row3")
 
 
 #### Data Frames
