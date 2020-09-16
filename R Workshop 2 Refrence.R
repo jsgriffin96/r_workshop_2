@@ -125,13 +125,87 @@ mean(eboard.df$iq)
 #less than
 512 < 1024
 
+3 < 3
+3 <= 3
+
 #greater than
 512 > 1024
 
-
+4 > 4
+4 >= 4
 #AND/OR/NOT
 TRUE & TRUE
 TRUE & FALSE
+
+TRUE | FALSE
+TRUE | TRUE
+FALSE | FALSE
+
+!TRUE
+!FALSE
+
+
+####Control Statements
+password <- "hunter2"
+
+userInput <- "hunter2"
+
+#if statements
+if(password==userInput) {
+  print("Correct Password!")
+}
+
+
+if(password!=userInput){
+  print("Wrong Password!")
+}  
+
+##if else statements
+if(password==userInput) {
+  print("Correct Password!")
+} else if(password!=userInput){
+  print("Wrong Password!")
+}
+
+
+##for loops
+week <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
+
+for (days in week) {
+  print(days)
+}
+
+##Combining both ideas
+random <- sample(1:1000, 50)
+
+for (number in random) {
+  if(number>500){
+    print(number)
+  }
+}
+
+
+#### Creating fuctions
+printTen <- function(item){
+  for (i in 1:10) {
+    print(item)
+  }
+}
+
+printTen("What?")
+
+
+##recursion (probably wont talk about it)
+factorial <- function(x){
+  if(x==1){
+    return(1)
+  }
+  
+  x*factorial(x-1)
+}
+
+factorial(10)
+
 
 
 
