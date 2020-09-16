@@ -47,12 +47,86 @@ gravity <- as.character(gravity)
 
 
 ####Vectors
-sampleVector <- c(1,2,3)
+numericVector <- c(1,2,3)
+characterVector <- c("Test","this","out")
+logicVector <- c(TRUE,TRUE,FALSE)
+
+##Combine vectors
+#numeric
+a <- c(1,2,3)
+b <- c(4,5,6)
+ab <- c(a,b)
+
+#character
+e <- c("The","brown","fox")
+f <- c("jumped","the","fence")
+ef <- c(e,f)
+
+#logic
+x <- c(TRUE,TRUE,FALSE)
+y <- c(FALSE, FALSE, TRUE)
+xy <- c(x,y)
+
+#combining vectors of different data types
+different <- c(TRUE,"Text",40)
+class(different)
+
+different<-list(TRUE,"Text",40)
+class(different)
+
+
+
 
 #Named Vector
 temperatures <- c(75,76,80,77,73,71,69)
 names(temperatures) <- c('Mon','Tues','Wed','Thurs','Fri','Sat','Sun')
 temperatures
+
+#vector operations
+a <- seq(1,10)
+b <- seq(15,24)
+
+#addition
+a+b
+
+#subtraction
+a-b
+
+#multiplication
+a*b
+
+a*4
+
+#division
+a/b
+
+b/10
+
+
+#vector functions
+sum(a)
+
+mean(a)
+
+sd(a)
+
+var(a)
+
+prod(a) #multiplies all together
+
+
+#vector indexing
+temperatures <- c(75,76,80,77,73,71,69)
+names(temperatures) <- c('Mon','Tues','Wed','Thurs','Fri','Sat','Sun')
+temperatures
+
+temperatures[1]
+temperatures[0]
+
+#vector slicing
+temperatures[1:4]
+
+weekdays<-temperatures[1:5]
 
 #Select data
 over.74 <- temperatures>74
@@ -60,10 +134,11 @@ over.74
 temperatures[over.74]
 temps.over.74 <- temperatures[over.74]
 
-#Combine vectors
-a <- c(1,2,3)
-b <- c(4,5,6)
-ab <- c(a,b)
+
+
+
+
+
 
 
 ####Matrices
@@ -192,7 +267,7 @@ printTen <- function(item){
   }
 }
 
-printTen("What?")
+printTen("Ok!")
 
 
 ##recursion (probably wont talk about it)
@@ -204,7 +279,7 @@ factorial <- function(x){
   x*factorial(x-1)
 }
 
-factorial(10)
+factorial(5)
 
 
 
