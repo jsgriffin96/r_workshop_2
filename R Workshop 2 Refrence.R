@@ -139,11 +139,19 @@ temps.over.74 <- temperatures[over.74]
 
 
 
-
-
 ####Matrices
-sampleMatrix <- matrix(data=c(1,2,3,4), nrow = 2, ncol = 2, byrow = FALSE) #change byrow 
+sampleMatrix <- matrix(data=seq(1,10), nrow = 5, ncol = 2, byrow = FALSE) #change byrow 
 sampleMatrix
+
+##Matrix operations
+colSums(sampleMatrix)
+
+rowSums(sampleMatrix)
+
+colMeans(sampleMatrix)
+
+rowMeans(sampleMatrix)
+
 
 #add row to matrix
 sampleMatrix <- rbind(sampleMatrix,c(5,6))
@@ -156,9 +164,16 @@ sampleMatrix
 colnames(sampleMatrix) = c("Col1","Col2","Col3")
 rownames(sampleMatrix) = c("Row1","Row2","Row3")
 
-#head/tail
-head(sampleMatrix)
-tail(sampleMatrix)
+
+
+
+
+#convert matrix to data frame
+sampleDataFrame <- as.data.frame(sampleMatrix)
+class(sampleDataFrame)
+
+str(sampleDataFrame)
+summary(sampleMatrix)
 
 #### Data Frames
 name <- c('Jarrod','Jillian','Patrick','Grant')
@@ -170,16 +185,63 @@ eboard.df <- data.frame(name,age,iq,standing)
 
 is.data.frame(eboard.df)
 
+
+
+#subsetting dataframe
+iqOver250 <- subset(eboard.df,iq > 250)
+superSeniors <- subset(eboard.df, standing == "Super Senior")
+
+
+####dataframe operations
+#getting info from data frame
+nrow(eboard.df)
+ncol(eboard.df)
+
+str(eboard.df)#structure
+
+
 #Lets change Grant's IQ
 eboard.df[4,3] <- 500
+eboard.df[eboard.df$name=="Grant","iq"] <- 500
 
 #accessing columns
 eboard.df$name
 eboard.df$iq
+#accessing rows
+eboard.df[1,]
 
 #An example of functions 
 mean(eboard.df$age)
 mean(eboard.df$iq)
+
+
+#build in data frame
+states <- state.x77
+
+#head/tail
+head(states)
+tail(states)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ####Logical operators
