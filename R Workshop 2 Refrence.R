@@ -187,9 +187,7 @@ is.data.frame(eboard.df)
 
 
 
-#subsetting dataframe
-iqOver250 <- subset(eboard.df,iq > 250)
-superSeniors <- subset(eboard.df, standing == "Super Senior")
+
 
 
 ####dataframe operations
@@ -198,7 +196,7 @@ nrow(eboard.df)
 ncol(eboard.df)
 
 str(eboard.df)#structure
-
+summary(eboard.df)
 
 #Lets change Grant's IQ
 eboard.df[4,3] <- 500
@@ -214,6 +212,31 @@ eboard.df[1,]
 mean(eboard.df$age)
 mean(eboard.df$iq)
 
+#adding a row to data frame
+cailin <- list(name = "Cailin", age = 24, iq = 1230, standing = "MBA Student")
+
+eboard.df <- rbind(eboard.df, as.data.frame(cailin))
+
+#adding a new column
+eboard.df <- cbind(eboard.df, c('red','green','blue','white','yellow'))
+
+#rename column
+colnames(eboard.df)[5] <- c("fav_color")
+
+#duplicate column
+temp<-cbind(eboard.df, rep(eboard.df$iq))
+
+
+
+#selecting data
+#subsetting dataframe
+iqOver250 <- subset(eboard.df,iq > 250)
+superSeniors <- subset(eboard.df, standing == "Super Senior")
+
+
+#selecting multiple columns
+
+eboard.df[,1:3]
 
 #build in data frame
 states <- state.x77
@@ -221,6 +244,7 @@ states <- state.x77
 #head/tail
 head(states)
 tail(states)
+
 
 
 
